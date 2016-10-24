@@ -17,5 +17,7 @@ while True:
     bmi = weight / (height**2)
     print("Your BMI is %s"% bmi.__str__())
 
+    print
+
 
 
