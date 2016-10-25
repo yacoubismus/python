@@ -7,7 +7,7 @@ def sieve_erathostens(max):
     primaries = [2,3]
     for number in range(4,max):
         flag = True
-        for num in range(2, number):
+        for num in range(2, int(number/2)):
             
             if(number % num == 0):
                 flag = False
@@ -17,10 +17,10 @@ def sieve_erathostens(max):
         if(flag):
            primaries.append(number) 
            
-    set(primaries)
+    ##set(primaries)
     return sorted(primaries) 
 
 
 
 
-print(sieve_erathostens(150))
+print(sieve_erathostens(1000))

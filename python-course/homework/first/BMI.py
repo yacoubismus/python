@@ -10,12 +10,12 @@ while True:
     if (validate_weight(weight)):
         print ("Invalid weight")
         print("Give a valid weight")
-        return
+        break
     height = float(input("Your height in Meter please !"))
     if(validate_height(height)):
         print ("Invalid height")
         print("Give a valid height")
-        return
+        break
     bmi = weight / (height**2)
     print("Your BMI is %s"% bmi.__str__())
 
