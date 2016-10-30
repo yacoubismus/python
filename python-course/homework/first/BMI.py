@@ -7,11 +7,11 @@ from BMI_Validators import *
 while True:
     print ('We will count your BMI.')
     weight = input("Your weight in KG please !")
-    if (validate_weight()):
+    if (not validate_weight(weight)):
         print ("Invalid weight")
         break
     height = input("Your height in Meter please !")
-    if(validate_height(height)):
+    if(not validate_height(height)):
         print ("Invalid height")
         break
     bmi = weight / (height**2)
