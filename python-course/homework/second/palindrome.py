@@ -6,7 +6,7 @@ def palindrome_checker(input):
     input = re.sub(r"\s+", "", input)
     # To small letters
     input = input.lower()
-    # start stp step to build reverse
+    # start stop step to build reverse
     reverse_input = input[::-1]
 
     return input == reverse_input
