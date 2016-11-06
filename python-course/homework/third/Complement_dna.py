@@ -14,8 +14,7 @@ def complement_Dna(dna_input):
     result = []
     valid_alphabet = ['A','C','G','T']
     dna_input = dna_input.upper()
-    input_as_list = list(dna_input)
-    for letter in input_as_list:
+    for letter in dna_input:
         if check_letter(letter , valid_alphabet):
             result.append(complement_converter(letter))
 
@@ -29,6 +28,8 @@ def complement_Dna(dna_input):
 #print(complement_Dna(""))
 #print(complement_Dna(123))
 print(complement_Dna("ttaTggcCt"))
+print(complement_Dna("t"))
+
 
 
 
