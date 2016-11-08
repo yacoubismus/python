@@ -20,3 +20,7 @@ def multiply_poynomials(list1, list2):
 
 
 print (multiply_poynomials([1,2,4,5,6],[1,2,4,5,6]))
+
+print (multiply_poynomials([1,2,4],[1,2,4,5,6]))
+
+print (multiply_poynomials([1,2,4,5,6],[1,2,4]))
