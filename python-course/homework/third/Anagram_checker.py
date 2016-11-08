@@ -15,9 +15,10 @@ def anagram_checker(input1, input2):
     return len(input2_as_list)== 0
 
 
-
+#print (anagram_checker(3, "I am a weakish speller"))
 print (anagram_checker("William Shakespeare", "I am a weakish speller"))
 
 print (anagram_checker("aa a a", "AAAA"))
 
 print (anagram_checker("aa", "aaa"))
+print (anagram_checker("ABBA", "abba"))
