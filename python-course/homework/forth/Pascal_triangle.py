@@ -1,69 +1,47 @@
-def erathostenes (number):
+'''
+Created on 14.11.2016
 
-    primaries =[]
+@author: yacoub
+'''
+# This fuction create Pascal triangle in Form of dicinary
+# Key is Line number and value is list
+def pascal(rows):
+    lines = {}
 
-    max = number
+    list = [1]
 
-    mark = [False] * number
-
-    for i in range(2, number):
-
-        if not mark[i]:
-
-             primaries.append(i)
-
-        for j in range(i*i, max, i):
-
-         # mark all multiples of i
-
-         mark[j] = True
-
-    return primaries
-
-def recursive_call(number, primaries, factories):
-
-    for primary in primaries:
-
-        if(number == 1):
-
-            return factories
-
-        elif(number % primary == 0):
-
-                factories.append(primary)
-
-                number =int (number / primary)
-
-                return recursive_call(number, primaries, factories)
-
-    return factories
+    for i in range(rows):
 
 
-def create_dictionary(item_list):
-    factories = {}
+        lines[i] = list
 
-    for item in item_list:
+        list_new = []
 
-        if factories[item]:
+        list_new.append(list[0])
 
-            factories[item] = 1
+        for i in range(len(list) - 1):
+            list_new.append(list[i] + list[i + 1])
 
+        list_new.append(list[-1])
 
+        list = list_new
 
-        else:
+    return lines
 
-            value = factories[item]
+# begin in the middle. With new Line whitespace fewer
+def create_triangle(file_name, dictionary):
+    file = open(file_name ,'w')
+    whitespace = len(dictionary) * 5
+    counter = 2
+    for key , value in dictionary.items():
+        file.write("\n")
+        temp_list = dictionary[key]
+        only_once = True
+        counter =  counter +1
+        for number in temp_list:
+            whitespace =  whitespace  -1
+            if(only_once):
+                only_once = False
+                file.write(' ' * whitespace)
 
-            value = value + 1
-
-    return factories
-
-def factorize(number):
-
-    factories = [1]
-
-    primaries = erathostenes(number)
-
-    return create_dictionary(recursive_call(number, primaries, factories))
-
-print(factorize(44))
+            file.write(str(number)+ ' ' * counter)
