@@ -3,7 +3,7 @@ Created on 14.11.2016
 
 @author: yacoub
 '''
-# This fuction create Pascal triangle in Form of dicinary
+# This function create Pascal triangle in Form of dictionary
 # Key is Line number and value is list
 def pascal(rows):
     lines = {}
@@ -28,7 +28,8 @@ def pascal(rows):
 
     return lines
 
-# begin in the middle. With new Line whitespace fewer
+""" begin in the middle. With new Line start before middle with more whitespaces"""
+
 def create_triangle(file_name, dictionary):
     file = open(file_name ,'w')
     whitespace = len(dictionary) * 5

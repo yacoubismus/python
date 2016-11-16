@@ -1,3 +1,8 @@
+''' I tried to solve the Exercise through three steps '''
+"""Its working fine until 41.000.000 . After that is crush down"""
+
+'''First step get all primaries under the number as a list '''
+
 def erathostenes(number):
     primaries = []
 
@@ -25,10 +30,10 @@ def factorize(number):
 
     return create_dictionary(recursive_call(number, primaries, factories))
 
-
+'''Second step: recursive method adding factories in alist'''
 def recursive_call(number, primaries, factories):
     for primary in primaries:
-
+        #break point
         if (number == 1):
 
             return factories
@@ -43,7 +48,7 @@ def recursive_call(number, primaries, factories):
 
     return factories
 
-
+"""Third step: create dictionary """
 def create_dictionary(item_list):
     factories = {}
 
