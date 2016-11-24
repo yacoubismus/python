@@ -3,26 +3,28 @@ Created on 23.11.2016
 
 @author: yacoub
 '''
-def levenshtein(s1, s2):
-    if len(s1) < len(s2):
-        return levenshtein(s2, s1)
+def edit_distance(first_str, second_str):
+    # if first string shorter. make it diverse
+    if len(first_str) < len(second_str):
+        return edit_distance(second_str, first_str)
 
-    # len(s1) >= len(s2)
-    if len(s2) == 0:
-        return len(s1)
-
-    previous_row = range(len(s2) + 1)
-    for i, c1 in enumerate(s1):
+    # if second string empty. all letter will be placed
+    if len(second_str) == 0:
+        return len(first_str)
+    # else 
+    last_row = range(len(second_str) + 1)
+    for i, c_first in enumerate(first_str):
         current_row = [i + 1]
-        for j, c2 in enumerate(s2):
-            insertions = previous_row[j + 1] + 1 # j+1 instead of j since previous_row and current_row are one character longer
-            deletions = current_row[j] + 1       # than s2
-            substitutions = previous_row[j] + (c1 != c2)
-            current_row.append(min(insertions, deletions, substitutions))
-        previous_row = current_row
+        for j, c_second in enumerate(second_str):
+            insertion = last_row[j + 1] + 1 
+            deletion = current_row[j] + 1       
+            substitution = last_row[j] + (c_first != c_second)
+            current_row.append(min(insertion, deletion, substitution))
+        last_row = current_row
     
-    return previous_row[-1]
+    return last_row[-1]
 
+if __name__ == "__main__":
+    print(edit_distance("Hi", "asda"))
+    
 
-
-print(levenshtein("Hi", "asda"))

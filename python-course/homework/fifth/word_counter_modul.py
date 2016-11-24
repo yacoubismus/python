@@ -18,12 +18,14 @@ def word_counter (file_name):
             if test_line_prefix(line):
                 line = replace_some_chars(line)
                 words_list.append(line.split(' '))
-    merged = list(itertools.chain(*words_list))        
+    merged = list(itertools.chain(*words_list))     # merge all lists in one list.   
     return Counter (merged)
 
 
 
- 
+def word_counter_printer (counter):
+    for key, value in counter.items():
+         print (key + " : " + str(value))
 
 
 # Testing first letter in the line after removing '"'
@@ -36,13 +38,18 @@ def test_line_prefix(line):
     if line.startswith('o'):
         return True
     else :
-        return False  
+        return False 
+# replacing     
 def replace_some_chars (line): 
     line = line.replace('"','')
     line = line.replace('.' , ' ')
     line = line.replace(',','')
     line = line.replace('?','')
     return line
-       
-print(word_counter("sherlock.txt"))    
+
+if __name__ == "__main__":
+    print(word_counter("sherlock.txt"))    
+    print (word_counter_printer(word_counter("sherlock.txt")))
+           
+
     
