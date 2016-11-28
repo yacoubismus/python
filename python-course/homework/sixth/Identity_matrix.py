@@ -9,4 +9,8 @@ def matrix_id(d):
     for i in range(d):
         matrix [i][i] = 1
     return matrix
-print (matrix_id(4))    
+
+if __name__ == "__main__":
+    print (matrix_id(4)) 
+    
+   

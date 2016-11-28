@@ -11,6 +11,9 @@ def matrix_transpose(m):
 
 
 
-m = [[1,2,3,4],[5,6,7,8]]    
+m = [[1,2,3,4],[5,6,7,8]]   
 
-print(matrix_transpose(m))    
+if __name__ == "__main__": 
+    print(matrix_transpose(m))   
+
+  
