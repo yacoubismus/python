@@ -29,8 +29,9 @@ def base(n):
 
 def base_convert(n,b):
     modulus_list = []
-    assert type(b) is string , "Its not astring: %r" % b
-    if b < 2 or b > 36 :
+    assert type(b) is not string , "%r is not a string " % b
+    b = int (b)
+    if (b < 2 ) or (b > 36) :
         return "invalid Base. Base should be bigger than 2 or smaller than 37"
     while n > 0 :
         
@@ -44,4 +45,5 @@ def base_convert(n,b):
 if __name__ == "__main__": 
     
     print(base(9))
+    base_convert(11,"1")
     
