@@ -28,4 +28,4 @@ if __name__ == "__main__":
 #     print(a)
 #     mm = matrix_get_submatrix(a,2,2)
 #     print(mm)
-#     print(a)
+#     print(a)  https://www.youtube.com/watch?v=JQ3AgsGEnKM
